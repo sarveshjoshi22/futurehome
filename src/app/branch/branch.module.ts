@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
-import { ProfileRoutingModule } from './profile-routing.module';
-import { ProfileComponent }   from './profile.component';
+import { BranchRoutingModule } from './branch-routing.module';
+import { BranchComponent }   from './branch.component';
 import { DataService } from '../service/data.service';
 import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
-    ProfileRoutingModule,
+    BranchRoutingModule,
     FormsModule
   ],
   exports: [],
-  declarations: [ProfileComponent],
+  declarations: [BranchComponent],
   providers: [],
 })
-export class ProfileModule { }
+export class BranchModule { }

@@ -5,17 +5,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProfileComponent } from './profile.component';
+import { BranchComponent } from './branch.component';
 
-const profileRoutes: Routes = [
+const branchRoutes: Routes = [
   {
     path: '',
-    component: ProfileComponent
+    component: BranchComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(profileRoutes)],
+  imports: [RouterModule.forChild(branchRoutes)],
   exports: [RouterModule]
 })
-export class ProfileRoutingModule { }
+export class BranchRoutingModule { }

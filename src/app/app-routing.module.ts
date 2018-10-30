@@ -9,9 +9,9 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   imports: [RouterModule.forRoot([
     { path: '', component: HomeComponent },
-    { path: 'home', component: HomeComponent }, // for lazy loading
-    { path: 'profile/:userid', loadChildren:'./profile/profile.module#ProfileModule' }, // for lazy loading
-    { path: '**', component: HomeComponent }, // for lazy loading
+    { path: 'home', component: HomeComponent },
+    { path: 'branch/:userName/:repoName', loadChildren:'./branch/branch.module#BranchModule' }, // for lazy loading
+    { path: '**', component: HomeComponent },
   ])], 
   exports: [RouterModule]
 })

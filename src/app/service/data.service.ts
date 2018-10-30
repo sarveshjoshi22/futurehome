@@ -25,4 +25,10 @@ export class DataService {
     return this._http.get(url)
       .map((res: Response) => res.json());
   }
+  getUserBranches(userid: any, repoName: any) {
+    let url = this.configData.gitApiUrl + 'repos/' + userid + '/' + repoName + '/branches';
+    return this._http.get(url)
+      .map((res: Response) => res.json());
+  }
+  
 }

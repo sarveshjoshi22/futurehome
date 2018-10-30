@@ -1,0 +1,32 @@
+<div class="container">
+        <div class="row">
+                <div class="title">
+                        <h2>List of Branches</h2>
+                </div>
+                <div *ngIf="branchData?.length > 0">
+                        <div class="story-list" *ngFor="let branch of branchData">
+                                <div class="row">
+                                        <div class="col-9 col-sm-9">
+                                                <p>{{branch.name}}</p>
+                                        </div>
+                                    <!--    <div class="col-3 col-sm-3">
+                                                        <a [routerLink]="['/branch',profileData.login,repo.name]">
+                                                                Branches
+                                                        </a>
+                                        </div> -->
+                                </div>
+                                <div class="row">
+                                        <div class="col-12 col-sm-12">
+                                                <p>Created at: {{repo.created_at}}</p>
+                                        </div>
+                                </div>
+                                <!--     -->
+                        </div>
+                </div>
+                <div *ngIf="branchData?.length == 0">
+                        No branches are available
+                </div>
+              
+        </div> 
+     <a [routerLink]="['/home']">Go to Home page</a>
+</div>
