@@ -1,4 +1,4 @@
-# angular2-webpack2-aot
+# futurehome
 webpack2 config settings JIT / AOT compile with lazy Load
 
 ### Quick start
@@ -7,7 +7,7 @@ webpack2 config settings JIT / AOT compile with lazy Load
 git clone https://github.com/sarveshjoshi22/futurehome
 
 # change directory to repo
-cd angular2-webpack2-aot
+cd futurehome
 
 # install the repo with npm
 npm install

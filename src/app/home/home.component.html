@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row">
+        <div class="title">
+            <h2>Welcome to the customize UI of GitHub</h2>
+        </div>
+        <div class="textCenter">
+            <form ngNativeValidate (ngSubmit)="getGitData()">
+                 <div class="col-12"> 
+                        <input [(ngModel)]="userId" name="userid" placeholder="Enter Your Git UserName" id="userid" type="text" class="" pattern="[a-zA-Z0-9]+" required>
+                 </div>
+                 <div class="col-12"> 
+                         <button class="" type="submit" name="action">Get Details</button>
+                 </div>
+                 <div class="col-12"> 
+                        <div class="errorText padd5">{{errorMsg}}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div *ngIf="showData" class="row textCenter">
+            <div class="col-12 col-sm-6"> 
+                <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <img class="avatar" src="{{profileData.avatar_url}}" alt="Profile Photo">
+                            </div>
+                           <div class="col-12 col-sm-6">
+                                <p>GIT Id: {{profileData.id}}</p>
+                                <p>UserName: {{profileData.login}}</p>
+                           </div>
+
+                </div>
+                <div class="row">
+                        <div class="col-12 col-sm-6">
+                                <p>Followers: {{profileData.followers}}</p>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                                <p>Following: {{profileData.following}}</p>
+                        </div>
+
+                </div>
+               
+                <div class="row">
+                        <div class="col-12 col-sm-6">
+                                <p>Public Repos: {{profileData.public_repos}}</p>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                                <p>public Gists: {{profileData.public_gists}}</p>
+                        </div>
+
+                </div>
+                <div class="row">
+                        <div class="col-12 col-sm-6">
+                                <p>Profile created at: {{profileData.created_at}}</p>
+                        </div>
+                 </div>
+                   
+             </div>
+             <div class="col-12 col-sm-6"> 
+                 <div *ngIf="repoData?.length > 0">
+                        <div class="story-list" *ngFor="let repo of repoData">
+                            <div>
+                                    {{repo.full_name}}
+                                {{repo.name}}
+                            </div>
+                            <!--    <a [routerLink]="['/blog']" [queryParams]="{entryId:story.entryId}">
+                                  <div class="row">
+                                    <div class="col-5">
+                                      <img class="custom-img-thumbnail" [src]="getImage(story.image)" alt="" />
+                                    </div>
+                                  
+                                  </div>
+                                </a> -->
+                            </div>
+                </div>
+                 <div *ngIf="repoData?.length == 0">
+                    No public repositories are available
+                 </div>
+             </div>
+
+    </div>
+</div>

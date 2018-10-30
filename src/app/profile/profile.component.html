@@ -1,0 +1,39 @@
+<div class="padd5">
+  <h3 class="padd5"> User Profile </h3>  
+
+   <form ngNativeValidate>
+        <div class="panel-body">
+            <div class="input-field padd5">
+                <label for="name">Name</label>
+                <br>
+                <input [(ngModel)]="userProfile.name" name="name" id="name" type="text" class="validate" readonly>
+            </div>
+
+            <div class="input-field padd5">
+                <label for="email">Email</label>
+                <br>
+                <input [(ngModel)]="userProfile.email" name="email" id="email" type="email" class="validate" readonly>
+            </div>
+
+            <div class="input-field padd5">
+                <label for="address">Address</label>
+                <br>
+                <input [(ngModel)]="userProfile.address" name="address" id="address" type="text" class="validate" readonly>
+            </div>
+
+            <div class="input-field padd5">
+                <label for="contact">Contact</label>
+                <br>
+                <input [(ngModel)]="userProfile.contact" name="contact" id="contact" type="text" class="validate" readonly>
+            </div>
+
+            <div class="input-field padd5">
+                <label for="gender">Gender</label>
+                <br>
+                <input [(ngModel)]="userProfile.gender" name="gender" id="gender" type="text" class="validate" readonly>
+            </div>
+            
+        </div>
+    </form>
+    <a class="spacing"  [routerLink]="['/home']">Go to Home page</a>
+</div>

@@ -1,0 +1,29 @@
+.title{
+    font-family: monospace;
+    text-align: center;
+    font-style: initial;
+    font-weight: bold;
+}
+.avatar{
+  width: 100px;
+  height: 100px;
+}
+/* Extra small devices "mobile phones" */
+@media only screen and (max-width: 768px) {
+  .title{
+    font-family: monospace;
+    text-align: center;
+    font-style: initial;
+    font-weight: bold;
+    padding: 0px 10px;
+    font-size: 10px;
+  }
+
+} 
+ 
+/* Extra small devices "Tabs" */
+@media only screen and (max-width: 992px) {} 
+/* Extra small devices "Tabs" */
+@media only screen and (max-width: 1200px) {}
+ 
+@media only screen and (max-width: 1920px) {}

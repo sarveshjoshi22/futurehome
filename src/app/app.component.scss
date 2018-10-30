@@ -1,0 +1,43 @@
+.main {
+  background-color: #f2f2f2;
+}
+header {
+  background-color: #c9d6e8;
+}
+footer{
+  background-color: #c9d6e8;
+}
+header .logo_img{
+  width: 200px;
+  height: 100px;
+}
+header .logo_position{
+  padding: 0px 20px;
+}
+footer{
+  position:absolute;
+   bottom:0;
+   width:100%;
+}
+footer .footerText{
+  text-align: right;
+}
+.paddRFText{
+  padding-right: 50px;
+}
+/* Extra small devices "mobile phones" */
+@media only screen and (max-width: 768px) {
+  .paddRFText{
+    padding-right: 25px;
+  }
+
+} 
+ 
+/* Extra small devices "Tabs" */
+@media only screen and (max-width: 992px) {} 
+/* Extra small devices "Tabs" */
+@media only screen and (max-width: 1200px) {}
+ 
+@media only screen and (max-width: 1920px) {}
+
+
