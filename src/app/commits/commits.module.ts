@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import { BranchRoutingModule } from './branch-routing.module';
-import { BranchComponent }   from './branch.component';
+import { CommitsRoutingModule } from './commits-routing.module';
+import { CommitsComponent }   from './commits.component';
 import { DataService } from '../service/data.service';
 import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
-    BranchRoutingModule,
+    CommitsRoutingModule,
     FormsModule,
     CommonModule
   ],
   exports: [],
-  declarations: [BranchComponent],
+  declarations: [CommitsComponent],
   providers: [],
 })
-export class BranchModule { }
+export class CommitsModule { }

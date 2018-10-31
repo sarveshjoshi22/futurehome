@@ -2,18 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
-  selector: 'branch',
-  templateUrl: 'branch.component.html',
-  styleUrls: ['branch.component.scss']
+  selector: 'commits',
+  templateUrl: 'commits.component.html',
+  styleUrls: ['commits.component.scss']
 })
-export class BranchComponent implements OnInit {
+export class CommitsComponent implements OnInit {
 
   // variable declarations
   userId: string;
   repoName: string;
+  branchName: string;
   showLoader: boolean = false;
-  branchData: any;
-  branchErrorMsg : string ='';
+  commitsData: any;
+  commitsErrorMsg : string ='';
   private sub: any;
   // constructor function
   constructor(
@@ -27,14 +28,15 @@ export class BranchComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.userId = params['userName'];
       this.repoName = params['repoName'];
+      this.branchName = params['branchName'];
       this.showLoader = true;
-      this.dataService.getUserBranches(this.userId,this.repoName).subscribe(branchData => {
-        console.log(branchData);
-        this.branchData = branchData;
+      this.dataService.getUserCommits(this.userId,this.repoName,this.branchName).subscribe(commitsData => {
+        console.log(commitsData);
+        this.commitsData = commitsData;
         this.showLoader = false;
-      }, (errorBranch) => {
+      }, (errorCommits) => {
         this.showLoader = false;
-        this.branchErrorMsg = 'No record found'
+        this.commitsErrorMsg = 'No record found'
       });
       
       

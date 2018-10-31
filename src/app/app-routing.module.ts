@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
     { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'branch/:userName/:repoName', loadChildren:'./branch/branch.module#BranchModule' }, // for lazy loading
+    { path: 'commits/:userName/:repoName/:branchName', loadChildren:'./commits/commits.module#CommitsModule' }, // for lazy loading
     { path: '**', component: HomeComponent },
   ])], 
   exports: [RouterModule]
