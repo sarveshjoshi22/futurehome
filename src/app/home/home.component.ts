@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit {
       });
 
     }, (error) => {
+      this.showLoader = false;
       this.showData = false;
       this.showError = true;
       this.profileData = [];

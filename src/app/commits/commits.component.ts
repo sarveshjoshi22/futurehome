@@ -31,8 +31,7 @@ export class CommitsComponent implements OnInit {
       this.branchName = params['branchName'];
       this.showLoader = true;
       this.dataService.getUserCommits(this.userId,this.repoName,this.branchName).subscribe(commitsData => {
-        console.log(commitsData);
-        this.commitsData = commitsData;
+         this.commitsData = commitsData;
         this.showLoader = false;
       }, (errorCommits) => {
         this.showLoader = false;

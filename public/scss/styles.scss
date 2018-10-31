@@ -41,6 +41,9 @@ img{
     margin: 0 auto;
     padding: 0 10px;
 }
+.paddBtm50{
+    padding-bottom: 50px;
+  }
 .row::before, .row::after {
     display: table;
     content: " ";
@@ -426,7 +429,7 @@ table {
     table td {
       border-bottom: 1px solid #ddd;
       display: block;
-      font-size: .8em;
+      font-size: .6em;
       text-align: right;
     }
     
@@ -462,6 +465,8 @@ table {
 @media (min-width: 1200px)  {
     
 }
+
+// css for loader
 .sk-fading-circle {
     margin: 100px auto;
     width: 40px;
@@ -597,3 +602,5 @@ table {
     0%, 39%, 100% { opacity: 0; }
     40% { opacity: 1; } 
   }
+
+  // tooltip css

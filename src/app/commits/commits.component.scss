@@ -15,3 +15,12 @@ p, div {
   padding: 10px;
   background-color:  darkseagreen;
 }
+.textOverflow{
+  white-space: nowrap;
+   overflow: hidden;
+  text-overflow: ellipsis;
+}
+.textOverflow:hover {
+  word-wrap: break-word;
+  white-space: unset;
+}

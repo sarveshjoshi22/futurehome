@@ -49,6 +49,11 @@
     color: #a94442;
     float: right;
 }
+
+.profilePadd{
+  padding: 0px 20px 20px 30px;
+  text-align: left;
+} 
 /* Extra small devices "mobile phones" */
 @media only screen and (max-width: 768px) {
   .title{
@@ -59,6 +64,9 @@
     padding: 0px 10px;
     font-size: 10px;
   }
+  .profilePadd{
+    text-align: center;
+  } 
   .errorText{
     float: none;
     text-align: center;
@@ -70,7 +78,17 @@
   .submitButtonPlacing{
     text-align: center;
   }
-} 
+  .paddResult{
+    padding: 5px 25px 50px 25px;
+  }
+  .row p{
+    margin: 5px;
+  }
+  .mobBorder{
+    border-bottom: 1px solid;
+  }
+}
+
  
 /* Extra small devices "Tabs" */
 @media only screen and (max-width: 992px) {} 

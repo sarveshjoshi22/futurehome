@@ -29,7 +29,6 @@ export class BranchComponent implements OnInit {
       this.repoName = params['repoName'];
       this.showLoader = true;
       this.dataService.getUserBranches(this.userId,this.repoName).subscribe(branchData => {
-        console.log(branchData);
         this.branchData = branchData;
         this.showLoader = false;
       }, (errorBranch) => {

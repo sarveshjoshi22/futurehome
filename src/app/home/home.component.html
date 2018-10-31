@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container paddBtm50">
         <div class="row homeSearchContainerPadd">
                 <div class="title">
                         <h2>Welcome to the customize UI of GitHub</h2>
@@ -23,42 +23,37 @@
                 </div>
         </div>
         <div *ngIf="showData" class="row paddResult">
-                <div class="col-12 col-sm-6 middleSection">
-                        <div class="row">
-                                <div class="col-12 col-sm-6">
-                                        <img class="avatar" src="{{profileData.avatar_url}}" alt="Profile Photo">
+                <div class="col-12 col-sm-6 middleSection mobBorder">
+                        <div class="profilePadd">
+                                <div class="row">
+                                        <div class="col-12 col-sm-12 textCenter">
+                                                <h2>Profile Information</h2>
+                                        </div>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                        <p>GIT Id: {{profileData.id}}</p>
-                                        <p>UserName: {{profileData.login}}</p>
-                                </div>
+                                <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                                <img class="avatar" src="{{profileData.avatar_url}}" alt="Profile Photo">
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                                <p>GIT Id: {{profileData.id}}</p>
+                                                <p>User Name: {{profileData.login}}</p>
+                                        </div>
 
-                        </div>
-                        <div class="row">
-                                <div class="col-12 col-sm-6">
-                                        <p>Followers: {{profileData.followers}}</p>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                        <p>Following: {{profileData.following}}</p>
-                                </div>
-
-                        </div>
-
-                        <div class="row">
-                                <div class="col-12 col-sm-6">
-                                        <p>Public Repos: {{profileData.public_repos}}</p>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                        <p>Public Gists: {{profileData.public_gists}}</p>
-                                </div>
-
-                        </div>
-                        <div class="row">
-                                <div class="col-12 col-sm-6">
-                                        <p>Profile created at: {{profileData.created_at | date: 'short'}}</p>
+                                <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                                <p>Followers: {{profileData.followers}}</p>
+                                                <p>Following: {{profileData.following}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                                <p>Public Repos: {{profileData.public_repos}}</p>
+                                                <p>Public Gists: {{profileData.public_gists}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                                        <p>Profile created at: {{profileData.created_at | date: 'short'}}</p>
+                                        </div>
                                 </div>
                         </div>
-
                 </div>
                 <div class="col-12 col-sm-6 middleSection">
                         <table>
@@ -83,11 +78,12 @@
                                 </tbody>
                                 <tbody *ngIf="repoData?.length == 0">
                                         <tr>
-                                           <td classs="textCenter" colspan="3">No public repositories are available.</td>             
+                                                <td classs="textCenter" colspan="3">No public repositories are available.</td>
                                         </tr>
-                                 </tbody>
+                                </tbody>
                         </table>
-                 </div>
+                        <div class="errorText padd5">*Note: Listing contain only public repos</div>
+                </div>
         </div>
 </div>
 <div *ngIf="showLoader" class="sk-fading-circle">

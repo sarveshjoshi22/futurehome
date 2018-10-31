@@ -1,5 +1,19 @@
-<div class="container">
+<div class="container paddBtm50">
         <div class="row">
+                <div *ngIf="showLoader" class="sk-fading-circle">
+                        <div class="sk-circle1 sk-circle"></div>
+                        <div class="sk-circle2 sk-circle"></div>
+                        <div class="sk-circle3 sk-circle"></div>
+                        <div class="sk-circle4 sk-circle"></div>
+                        <div class="sk-circle5 sk-circle"></div>
+                        <div class="sk-circle6 sk-circle"></div>
+                        <div class="sk-circle7 sk-circle"></div>
+                        <div class="sk-circle8 sk-circle"></div>
+                        <div class="sk-circle9 sk-circle"></div>
+                        <div class="sk-circle10 sk-circle"></div>
+                        <div class="sk-circle11 sk-circle"></div>
+                        <div class="sk-circle12 sk-circle"></div>
+                </div>
                 <table>
                         <caption>List of Commits</caption>
                         <thead>
@@ -15,7 +29,7 @@
                                 <tr *ngFor="let commit of commitsData">
                                         <td data-label="Committer">{{commit?.commit?.committer?.name}}</td>
                                         <td data-label="Commit Message">{{commit?.commit?.message}}</td>
-                                        <td data-label="Commit Id">{{commit?.sha}}</td>
+                                        <td data-label="Commit Id" class="textOverflow">{{commit?.sha}}</td>
                                         <td data-label="Comments Count">{{commit?.commit?.comment_count}}</td>
                                         <td data-label="Date">{{commit?.commit?.committer?.date | date: 'short'}}</td>
                                 </tr>
@@ -27,19 +41,5 @@
                         </tbody>
                 </table>
         </div>
-        <a [routerLink]="['/home']">Go to Home page</a>
-</div>
-<div *ngIf="showLoader" class="sk-fading-circle">
-        <div class="sk-circle1 sk-circle"></div>
-        <div class="sk-circle2 sk-circle"></div>
-        <div class="sk-circle3 sk-circle"></div>
-        <div class="sk-circle4 sk-circle"></div>
-        <div class="sk-circle5 sk-circle"></div>
-        <div class="sk-circle6 sk-circle"></div>
-        <div class="sk-circle7 sk-circle"></div>
-        <div class="sk-circle8 sk-circle"></div>
-        <div class="sk-circle9 sk-circle"></div>
-        <div class="sk-circle10 sk-circle"></div>
-        <div class="sk-circle11 sk-circle"></div>
-        <div class="sk-circle12 sk-circle"></div>
+        <a [routerLink]="['/home']">Go to Home page</a> | <a [routerLink]="['/branch',userId,repoName]">Branches</a>
 </div>
