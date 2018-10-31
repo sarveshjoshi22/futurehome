@@ -5,17 +5,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProfileComponent } from './profile.component';
+import { CommitsComponent } from './commits.component';
 
-const profileRoutes: Routes = [
+const commitsRoutes: Routes = [
   {
     path: '',
-    component: ProfileComponent
+    component: CommitsComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(profileRoutes)],
+  imports: [RouterModule.forChild(commitsRoutes)],
   exports: [RouterModule]
 })
-export class ProfileRoutingModule { }
+export class CommitsRoutingModule { }

@@ -15,7 +15,7 @@ header .logo_position{
   padding: 0px 20px;
 }
 footer{
-  position:absolute;
+  position:fixed;
    bottom:0;
    width:100%;
 }
@@ -24,6 +24,9 @@ footer .footerText{
 }
 .paddRFText{
   padding-right: 50px;
+}
+.paddTB10{
+  padding: 10px 0px;
 }
 /* Extra small devices "mobile phones" */
 @media only screen and (max-width: 768px) {

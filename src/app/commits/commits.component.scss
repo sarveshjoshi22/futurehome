@@ -1,0 +1,26 @@
+p, div {
+  font-size: 20px;
+  text-align: center;
+}
+.row{
+  padding: 15px;
+}
+.padd5{
+  padding: 5px;
+}
+.errorText{
+  color: #ff0000;
+}
+.sub-btn{
+  padding: 10px;
+  background-color:  darkseagreen;
+}
+.textOverflow{
+  white-space: nowrap;
+   overflow: hidden;
+  text-overflow: ellipsis;
+}
+.textOverflow:hover {
+  word-wrap: break-word;
+  white-space: unset;
+}

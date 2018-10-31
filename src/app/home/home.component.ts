@@ -37,13 +37,16 @@ export class HomeComponent implements OnInit {
         this.repoData = repoData;
         this.showLoader = false;
       }, (errorRepos) => {
+        this.repoData = [];
         this.showLoader = false;
         this.repoErrorMsg = 'No record found'
       });
 
     }, (error) => {
+      this.showLoader = false;
       this.showData = false;
       this.showError = true;
+      this.profileData = [];
       this.errorMsg = 'User not found, Please try again'
     });
 

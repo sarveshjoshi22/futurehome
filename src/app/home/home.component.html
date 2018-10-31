@@ -1,81 +1,102 @@
-<div class="container">
-    <div class="row">
-        <div class="title">
-            <h2>Welcome to the customize UI of GitHub</h2>
+<div class="container paddBtm50">
+        <div class="row homeSearchContainerPadd">
+                <div class="title">
+                        <h2>Welcome to the customize UI of GitHub</h2>
+                </div>
+                <div>
+                        <form ngNativeValidate (ngSubmit)="getGitData()">
+                                <div class="col-12 col-sm-6">
+                                        <div class="inputFieldPlacing">
+                                                <input [(ngModel)]="userId" name="userid" placeholder="Enter Your Git User Name" id="userid" type="text" class="inputField"
+                                                        pattern="[a-zA-Z0-9]+" required>
+                                        </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                        <div class="submitButtonPlacing">
+                                                <button class="getButton" type="submit" name="action">Get Details</button>
+                                        </div>
+                                </div>
+                                <div *ngIf="showError" class="col-12 col-sm-6">
+                                        <div class="errorText padd5">{{errorMsg}}</div>
+                                </div>
+                        </form>
+                </div>
         </div>
-        <div class="textCenter">
-            <form ngNativeValidate (ngSubmit)="getGitData()">
-                 <div class="col-12"> 
-                        <input [(ngModel)]="userId" name="userid" placeholder="Enter Your Git UserName" id="userid" type="text" class="" pattern="[a-zA-Z0-9]+" required>
-                 </div>
-                 <div class="col-12"> 
-                         <button class="" type="submit" name="action">Get Details</button>
-                 </div>
-                 <div class="col-12"> 
-                        <div class="errorText padd5">{{errorMsg}}</div>
+        <div *ngIf="showData" class="row paddResult">
+                <div class="col-12 col-sm-6 middleSection mobBorder">
+                        <div class="profilePadd">
+                                <div class="row">
+                                        <div class="col-12 col-sm-12 textCenter">
+                                                <h2>Profile Information</h2>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                                <img class="avatar" src="{{profileData.avatar_url}}" alt="Profile Photo">
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                                <p>GIT Id: {{profileData.id}}</p>
+                                                <p>User Name: {{profileData.login}}</p>
+                                        </div>
+
+                                </div>
+                                <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                                <p>Followers: {{profileData.followers}}</p>
+                                                <p>Following: {{profileData.following}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                                <p>Public Repos: {{profileData.public_repos}}</p>
+                                                <p>Public Gists: {{profileData.public_gists}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                                        <p>Profile created at: {{profileData.created_at | date: 'short'}}</p>
+                                        </div>
+                                </div>
+                        </div>
                 </div>
-            </form>
+                <div class="col-12 col-sm-6 middleSection">
+                        <table>
+                                <caption>List of Repositories</caption>
+                                <thead>
+                                        <tr>
+                                                <th scope="col">Repo Name</th>
+                                                <th scope="col">Created Date</th>
+                                                <th scope="col">Link</th>
+                                        </tr>
+                                </thead>
+                                <tbody *ngIf="repoData?.length > 0">
+                                        <tr *ngFor="let repo of repoData">
+                                                <td data-label="Name">{{repo.name}}</td>
+                                                <td data-label="Created Date">{{repo.created_at | date: 'short'}}</td>
+                                                <td data-label="Link">
+                                                        <a [routerLink]="['/branch',profileData.login,repo.name]">
+                                                                Branches
+                                                        </a>
+                                                </td>
+                                        </tr>
+                                </tbody>
+                                <tbody *ngIf="repoData?.length == 0">
+                                        <tr>
+                                                <td classs="textCenter" colspan="3">No public repositories are available.</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                        <div class="errorText padd5">*Note: Listing contain only public repos</div>
+                </div>
         </div>
-    </div>
-    <div *ngIf="showData" class="row textCenter">
-            <div class="col-12 col-sm-6"> 
-                <div class="row">
-                            <div class="col-12 col-sm-6">
-                                <img class="avatar" src="{{profileData.avatar_url}}" alt="Profile Photo">
-                            </div>
-                           <div class="col-12 col-sm-6">
-                                <p>GIT Id: {{profileData.id}}</p>
-                                <p>UserName: {{profileData.login}}</p>
-                           </div>
-
-                </div>
-                <div class="row">
-                        <div class="col-12 col-sm-6">
-                                <p>Followers: {{profileData.followers}}</p>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                                <p>Following: {{profileData.following}}</p>
-                        </div>
-
-                </div>
-               
-                <div class="row">
-                        <div class="col-12 col-sm-6">
-                                <p>Public Repos: {{profileData.public_repos}}</p>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                                <p>public Gists: {{profileData.public_gists}}</p>
-                        </div>
-
-                </div>
-                <div class="row">
-                        <div class="col-12 col-sm-6">
-                                <p>Profile created at: {{profileData.created_at}}</p>
-                        </div>
-                 </div>
-                   
-             </div>
-             <div class="col-12 col-sm-6"> 
-                 <div *ngIf="repoData?.length > 0">
-                        <div class="story-list" *ngFor="let repo of repoData">
-                            <div>
-                                    {{repo.full_name}}
-                                {{repo.name}}
-                            </div>
-                            <!--    <a [routerLink]="['/blog']" [queryParams]="{entryId:story.entryId}">
-                                  <div class="row">
-                                    <div class="col-5">
-                                      <img class="custom-img-thumbnail" [src]="getImage(story.image)" alt="" />
-                                    </div>
-                                  
-                                  </div>
-                                </a> -->
-                            </div>
-                </div>
-                 <div *ngIf="repoData?.length == 0">
-                    No public repositories are available
-                 </div>
-             </div>
-
-    </div>
+</div>
+<div *ngIf="showLoader" class="sk-fading-circle">
+        <div class="sk-circle1 sk-circle"></div>
+        <div class="sk-circle2 sk-circle"></div>
+        <div class="sk-circle3 sk-circle"></div>
+        <div class="sk-circle4 sk-circle"></div>
+        <div class="sk-circle5 sk-circle"></div>
+        <div class="sk-circle6 sk-circle"></div>
+        <div class="sk-circle7 sk-circle"></div>
+        <div class="sk-circle8 sk-circle"></div>
+        <div class="sk-circle9 sk-circle"></div>
+        <div class="sk-circle10 sk-circle"></div>
+        <div class="sk-circle11 sk-circle"></div>
+        <div class="sk-circle12 sk-circle"></div>
 </div>

@@ -4,10 +4,56 @@
     font-style: initial;
     font-weight: bold;
 }
+
 .avatar{
   width: 100px;
   height: 100px;
+  border: 2px solid #ddd;
 }
+.middleSection{
+  max-height: 500px;
+  overflow-y: auto;
+}
+.paddResult{
+  padding: 5px 25px 10px 25px;
+  border: 1px solid #ddd;
+}
+.homeSearchContainerPadd{
+  padding: 15px 10px 20px 10px;
+}
+.inputFieldPlacing{
+  padding: 5px 15px;
+  float: right;
+}
+.submitButtonPlacing{
+  padding: 10px 15px;
+}
+.inputField{
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.getButton{
+  padding: 10px 20px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    color: white;
+    cursor: pointer;
+}
+.errorText{
+    padding: 0px 15px;
+    border: 1px solid transparent;
+    text-align: center;
+    color: #a94442;
+    float: right;
+}
+
+.profilePadd{
+  padding: 0px 20px 20px 30px;
+  text-align: left;
+} 
 /* Extra small devices "mobile phones" */
 @media only screen and (max-width: 768px) {
   .title{
@@ -18,8 +64,31 @@
     padding: 0px 10px;
     font-size: 10px;
   }
+  .profilePadd{
+    text-align: center;
+  } 
+  .errorText{
+    float: none;
+    text-align: center;
+  }
+  .inputFieldPlacing{
+    float: none;
+    text-align: center;
+  }
+  .submitButtonPlacing{
+    text-align: center;
+  }
+  .paddResult{
+    padding: 5px 25px 50px 25px;
+  }
+  .row p{
+    margin: 5px;
+  }
+  .mobBorder{
+    border-bottom: 1px solid;
+  }
+}
 
-} 
  
 /* Extra small devices "Tabs" */
 @media only screen and (max-width: 992px) {} 
